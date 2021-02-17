@@ -14,12 +14,22 @@ const (
 // RegisterRoutes registers pcdemo-related REST handlers to a router
 func RegisterRoutes(clientCtx client.Context, r *mux.Router) {
 	// this line is used by starport scaffolding # 2
+	registerQueryRoutes(clientCtx, r)
+	registerTxHandlers(clientCtx, r)
+
 }
 
 func registerQueryRoutes(clientCtx client.Context, r *mux.Router) {
 	// this line is used by starport scaffolding # 3
+	r.HandleFunc("/pcdemo/posts/{id}", getPostHandler(clientCtx)).Methods("GET")
+	r.HandleFunc("/pcdemo/posts", listPostHandler(clientCtx)).Methods("GET")
+
 }
 
 func registerTxHandlers(clientCtx client.Context, r *mux.Router) {
 	// this line is used by starport scaffolding # 4
+	r.HandleFunc("/pcdemo/posts", createPostHandler(clientCtx)).Methods("POST")
+	r.HandleFunc("/pcdemo/posts/{id}", updatePostHandler(clientCtx)).Methods("POST")
+	r.HandleFunc("/pcdemo/posts/{id}", deletePostHandler(clientCtx)).Methods("POST")
+
 }

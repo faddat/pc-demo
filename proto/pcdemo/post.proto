@@ -1,0 +1,13 @@
+syntax = "proto3";
+package fivesixnine.pcdemo.pcdemo;
+
+option go_package = "github.com/fivesixnine/pc-demo/x/pcdemo/types";
+
+import "gogoproto/gogo.proto";
+
+message Post {
+  string creator = 1;
+  string id = 2;
+  string title = 3; 
+  string body = 4; 
+}
