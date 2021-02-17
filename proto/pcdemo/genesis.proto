@@ -1,0 +1,12 @@
+syntax = "proto3";
+package fivesixnine.pcdemo.pcdemo;
+
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/fivesixnine/pc-demo/x/pcdemo/types";
+
+// GenesisState defines the capability module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+}
+
